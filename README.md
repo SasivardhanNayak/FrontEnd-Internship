@@ -1,5 +1,7 @@
 System Design Overview
+
 Architecture
+
 The TO DO List is built as a single-page application (SPA) using React.js. It is designed to be responsive and user-friendly, providing essential features for task creation, management, and organization.
 
 Components
