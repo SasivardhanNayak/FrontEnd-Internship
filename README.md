@@ -46,7 +46,9 @@ The UI is styled using a custom CSS file (App.css), which provides a clean and m
 Data Flow
 
 Task Creation: Users input a task name and description in the TaskForm. Upon submission, the task is added to the global state in App.js.
+
 Task Management: Tasks can be edited, marked as complete, or deleted through actions in the TaskList and TaskItem components. The state updates accordingly, reflecting changes in the UI.
+
 Task Search: Users can search for tasks using a search input field, filtering the displayed tasks based on the search term.
 
 Implementation Explanation
@@ -62,12 +64,15 @@ The App.js file is the heart of the application, responsible for managing the st
 State Management:
 
 The App component uses the useState hook to maintain the state of all tasks in an array.
+
 Each task is represented as an object with properties like taskName, description, isDone, and timestamp.
 
 Core Functions:
 
 addTask(newTask): Adds a new task to the state. This function is passed down as a prop to the TaskForm component.
+
 toggleTaskDone(taskToUpdate): Toggles the completion status of a task. This function is passed to the TaskList component.
+
 editTask(updatedTask): Updates an existing task's details, including its name and description. This function is also passed to the TaskList component.
 
 TaskForm Component
@@ -77,11 +82,13 @@ The TaskForm.js file contains the form used to create new tasks.
 Form Elements:
 
 Includes input fields for the task name and description.
+
 The form uses local state to manage the input values temporarily before passing them to the App component's addTask function upon submission.
 
 Validation:
 
 The form ensures that the task name is not empty before allowing the task to be added.
+
 On successful submission, the form resets the input fields to their initial state.
 
 TaskList Component
@@ -107,7 +114,9 @@ Each TaskItem can be expanded to reveal additional details, such as the task des
 Action Buttons:
 
 Mark as Done: Toggles the task's isDone status when the button is clicked.
+
 Edit: Opens up the task's details for editing. Once edited, the task is updated in the App component's state.
+
 Delete: Removes the task from the list.
 
 Data Flow
@@ -115,6 +124,7 @@ Data Flow
 Task Creation and Management:
 
 When a user creates a task, the data flows from the TaskForm component to the App component, where it's added to the task list state.
+
 The task list is then passed down to the TaskList component, where individual tasks are rendered using the TaskItem component.
 
 Task Interaction:
